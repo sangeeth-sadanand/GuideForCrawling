@@ -1,0 +1,53 @@
+site_name: Sans Notes
+
+include_search_page: true
+search_index_only: false
+
+theme:
+  name: material
+  custom_dir: docs\overrides\
+  features:
+    - content.tabs.link
+    - content.code.annotate
+  palette:
+    - scheme: default
+      primary: teal
+      accent: teal
+      
+
+markdown_extensions:
+  - toc
+  - abbr
+  - pymdownx.snippets
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - tables
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - def_list
+  - attr_list
+  - md_in_html
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tabbed:
+      alternate_style: true 
+
+plugin:
+  - with-pdf
+
+
+nav:
+  - request.md
+  - soup.md
+  - selenium.md
+  - scrapy.md
+  - crawlingRequest.md
+  - crawlingSelenium.md
+  - crawlingScrapy.md
+  
