@@ -18,3 +18,23 @@ by using
 pre_date = datetime(1899,12,30)
 d =  floor((date - pre_date).total_seconds()/86400)
 ```
+
+
+### Flow Diagram
+
+```mermaid
+graph TB
+    start([start]) --> P1[Range over date]
+    P1 --> C1{If range over date finished}
+    C1 -- no --> P2[Decrease the date day by 1]
+    P2 --> P3[Compute the date archive url]
+    P3 --> P4[Make a request and fetch the response]
+    P4 --> P5[Parse the response and get the links of the article]
+    P5 --> P6[Iterate over the links]
+    P6 --> C2{If all links completed}
+    C2 -- yes --> P1
+    C2 -- No --> P7[Make a request and fetch the response]
+    P7 --> P8[Parse the response and get the details of the article]
+    P8 --> P6
+    C1 -- yes --> exit([exit])
+```
